@@ -1,0 +1,106 @@
+\documentclass{article}
+
+\usepackage[portuguese]{babel}
+\usepackage[portuguese, calc, showdow]{datetime2}
+\usepackage{pgfcalendar}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage[includehead, headsep=2.5cm, top=2cm]{geometry}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{graphbox}
+\usepackage{svg}
+\usepackage{hyperref}
+
+\usepackage[totpages]{zref}
+\usepackage{xcolor}
+
+\definecolor{mackred}{RGB}{255, 0, 30}
+
+\hypersetup {
+	colorlinks=true,
+	urlcolor=mackred,
+	citecolor=mackred
+}
+
+\title{\Huge \textbf{Lista de Exercíos \_\_ \\ \LARGE \textless{}Tema da Aula\textgreater{} }}
+\author{\large Ministrador: \\ \href{mailto:10723904@mackenzista.com.br}{Mateus Felipe da Silveira Vieira} \and Professor Responsável: \\ \href{mailto:calebe.bianchini@mackenzie.br}{Calebe de Paula Bianchini}}
+
+
+% \renewcommand{\bibname}{Referências Bibliográficas e Material Complementar}
+
+
+\pagestyle{fancy}
+\lhead{Liga Mackenzie de Computação Quântica}
+\rhead{
+	\includegraphics[width=0.4\textwidth,align=c]{155_UPM_geral_tight.png}
+}
+
+\cfoot{
+	\includegraphics[width=0.4\textwidth,align=c]{UPM.2_horizontal_vermelho.png}
+}
+\rfoot{página \thepage{} de \ztotpages}
+
+\begin{document}
+\maketitle
+\thispagestyle{fancy}
+
+\nobreak
+\begin{figure}[h!]
+	\centering
+	\includesvg{Brasao}
+\end{figure}
+
+\pagebreak
+
+
+\section*{Informações Importantes:}
+
+\newcount\deadline
+\pgfcalendardatetojulian{\year-\month-\day+6}{\deadline}
+\pgfcalendarjuliantodate{\deadline}{\deadlineyear}{\deadlinemonth}{\deadlineday}
+
+A resolução dessa atividade deverá ser entregue até o dia \textbf{\date{\deadlineday/\deadlinemonth/\deadlineyear} às \DTMdisplaytime{23}{59}{59}} (dia anterior à próxima aula) para atribuição de horas de atividade complementar, pela plataforma \textless{}Nome da Plataforma\textgreater{}. Quaisquer problemas de envio devem ser notificados, com antecedência, para o e-mail do \href{mailto:10723904@mackenzista.com.br}{Ministrador (10723904@mackenzista.com.br)}; \textbf{atividades atrasadas não serão aceitas}.
+
+\vspace{1em}
+
+\noindent \textbf{Plágio} e conteúdos gerados por \textbf{Inteligência Artificial (IA)} são \textbf{estritamente proibidos}; \textbf{não serão atribuídas horas de atividades complementares} em caso de forte suspeita ou comprovação de conteúdo não autoral. Quando utilizar-se de trabalhos de terceiros, certifique-se de fazer a citação apropriada. 
+
+\vspace{1em}
+
+\noindent Para os exercícios de código, é altamente recomendada (mas não obrigatória) a utilização de repositórios de código como \href{https://about.gitlab.com/}{GitLab}, \href{https://github.com/}{GitHub} ou \href{https://savannah.gnu.org/}{GNU Savannah}. Se utilizar, certifique-se de que os links dos repositórios Git estejam públicos e que a versão mais recente esteja commitada e disponível no ramo origin. Se desejar, pode incluir também no arquivo de entrega o código em texto (formato copiável) e incluir prints da execução do programa. Por favor, facilite a execução do seu código.
+
+\vspace{1em}
+
+\noindent Os demais exercícios podem ser realizados de modo manuscrito ou digitado (recomenda-se o uso da ferramenta \href{https://www.latex-project.org/}{\LaTeX{}}), mas realize a entrega em formato \textit{.pdf}, para evitar problemas de formatação.
+
+
+\vspace{1em}
+
+\noindent Quaisquer dúvidas sobre a realização da atividade, assim como sobre o conteúdo passado, podem ser tiradas via \href{mailto:10723904@mackenzista.com.br}{e-mail}, grupo de WhatsApp da liga, ou até mesmo por reunião presencial ou a distância (mediante agendamento prévio). Não permaneça com dúvida.
+
+\vspace{1em}
+
+\noindent O material teórico, referente a essa aula, assim como outras referências e materiais úteis para a realização da atividade, pode ser encontrado na última página do documento \cite{SlideAula}. A consulta a materiais externos, assim como a realização de uma pesquisa adicional aos conteúdos das aulas, é incentivada, todavia não necessária para a realização desta atividade.
+
+\vspace{5em}
+
+\begin{center}
+	\Huge Boa Atividade!
+\end{center}
+
+\pagebreak
+
+\bibliographystyle{plain}
+\bibliography{references}
+
+\vspace{1.5em}
+
+\begin{center}
+	\huge Feito com: \\ \vspace{0.5em} \Huge \LaTeX{} \\ \vspace{1.5em} \huge Apoio: \\ \vspace{0.5em} \includegraphics[width=0.4\textwidth,align=c]{UPM.2_horizontal_vermelho.png} \\ \vspace{1.5em} \huge Realização: \\ \vspace{0.5em} \Huge Logo Liga Mackenzie de Computação Quântica
+\end{center}
+
+\end{document}
+
+% bibtex template && pdflatex --shell-escape template.tex && open template.pdf
